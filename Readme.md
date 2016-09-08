@@ -1,5 +1,7 @@
 # Let's do this:
 
+## The simplest example
+
 Simplest executable `hello.c`:
 
 ```c
@@ -29,3 +31,24 @@ Or when you want an unique command without caring what build scripts were genera
     cmake --build . --clean-first
 
 Notice the `--clean-first` parameter, it cleans the build first, of course.
+
+## Extending the example
+
+Sometimes CMake tells you a nasty warning about required version, let's get rid of it:
+
+```cmake
+cmake_minimum_required (VERSION 3.5)
+add_executable (hello hello.c)
+```
+
+And while we are there, let's assign a name for our cmake project:
+
+```cmake
+cmake_minimum_required (VERSION 3.5)
+project (HelloCMake)
+add_executable (hello hello.c)
+```
+
+Now, if you generate a XCode project or Visual Studio solution, they will have the name of the project, not something generic like `Project.sln`.
+
+

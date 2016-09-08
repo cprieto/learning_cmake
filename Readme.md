@@ -51,4 +51,38 @@ add_executable (hello hello.c)
 
 Now, if you generate a XCode project or Visual Studio solution, they will have the name of the project, not something generic like `Project.sln`.
 
+## Libraries
 
+Let's create a simple library with its header file `greeter.h`:
+
+```c
+void sayHello();
+```
+
+And, well, its body `greeter.c`:
+
+```c
+#include <stdio.h>
+
+void sayHello() {
+    printf("hello world\n");
+}
+```
+
+It is time to modify our `CMakeLists.txt` file
+
+```cmake
+cmake_minimum_required (VERSION 3.5)
+project (HelloCMake)
+add_executable (hello hello.c)
+add_library (greeter greeter.c)
+```
+
+Now if we regenerate the script and build it again, we will see a _static library_, that is because it is the default for CMake, let's change it to a dynamic library:
+
+```cmake
+cmake_minimum_required (VERSION 3.5)
+project (HelloCMake)
+add_executable (hello hello.c)
+add_library (greeter SHARED greeter.c)
+```

@@ -1,7 +1,5 @@
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Makefile
-cmake_install.cmake
-install_manifest.txt
-CTestTestfile.cmake
+# Ignoring linux executable files
+*
+!*.c
+!*.h
+CMakeLists.txt

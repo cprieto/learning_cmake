@@ -4,7 +4,7 @@ add_subdirectory (libgreeter)
 include_directories (libgreeter)
 
 set (PROJECT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
-set (HELLO_SOURCE ${PROJECT_SOURCE_DIR}/hello.c)
+file (GLOB HELLO_SOURCE ${PROJECT_SOURCE_DIR}/*.c)
 add_executable (hello ${HELLO_SOURCE})
 target_link_libraries (hello greeter)
 

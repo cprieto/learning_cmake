@@ -86,3 +86,29 @@ project (HelloCMake)
 add_executable (hello hello.c)
 add_library (greeter SHARED greeter.c)
 ```
+
+## Linking libraries
+
+We have a library but we are not using it, let's change that and modify `hello.c`:
+
+```c
+#include "greeter.h"
+
+int main() {
+    sayHello();
+}
+```
+
+If we try to run this with the `CMakeLists.txt` file as is, it will fail. Let's explicitly say we want to link our library to our executable:
+
+```cmake
+cmake_minimum_required (VERSION 3.5)
+project (HelloCMake)
+add_executable (hello hello.c)
+add_library (greeter SHARED greeter.c)
+target_link_libraries (hello greeter)
+```
+
+Now our executable will be build and have a dependency on our greeter shared library.
+
+

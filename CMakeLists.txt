@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.5)
 project (HelloCMake)
+add_subdirectory (libgreeter)
 add_executable (hello hello.c)
-add_library (greeter SHARED greeter.c)
 target_link_libraries (hello greeter)

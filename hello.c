@@ -1,5 +1,5 @@
-#include <stdio.h>
+#include "greeter.h"
 
 int main() {
-    printf("hello world\n");
+    sayHello();
 }

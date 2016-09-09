@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 3.5)
 project (HelloCMake)
 
 set (EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/build)
+set (LIBRARY_OUTPUT_PATH ${EXECUTABLE_OUTPUT_PATH})
 
 add_subdirectory (libgreeter)
 include_directories (libgreeter)

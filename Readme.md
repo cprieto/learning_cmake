@@ -111,4 +111,15 @@ target_link_libraries (hello greeter)
 
 Now our executable will be build and have a dependency on our greeter shared library.
 
+## Moving out-of-source
 
+Let's start moving the headers, let's move `greeter.h` to the directory `includes`
+
+```cmake
+cmake_minimum_required (VERSION 3.5)
+project (HelloCMake)
+add_executable (hello hello.c)
+include_directories (includes)
+add_library (greeter SHARED greeter.c)
+target_link_libraries (hello greeter)
+`
